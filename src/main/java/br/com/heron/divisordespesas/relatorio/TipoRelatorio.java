@@ -3,9 +3,12 @@ package br.com.heron.divisordespesas.relatorio;
 public enum TipoRelatorio {
 	
 	CONTRIBUICAO,
-	CONSUMO,
+	DIVISAO_CONSUMO_CATEGORIA,
 	DIVIDA,
 	ARECEBER,
-	FINAL
+	FINAL, 
+	GASTO_CATEGORIA,
+	CONSUMO_PARTICIPANTE,
+	VALOR_CATEGORIA
 
 }

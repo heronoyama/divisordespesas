@@ -5,12 +5,12 @@ import java.util.List;
 import br.com.heron.divisordespesas.configuracao.Categoria;
 import br.com.heron.divisordespesas.grupo.Grupo;
 
-class RelatorioConsumoCategoria extends RelatorioCusto {
+class RelatorioDivisaoConsumoCategoria extends RelatorioCusto {
 
 	private Grupo grupo;
 	private List<Categoria> categorias;
 	
-	public RelatorioConsumoCategoria(Grupo grupo) {
+	RelatorioDivisaoConsumoCategoria(Grupo grupo) {
 		this.grupo = grupo;
 		categorias = grupo.consumos();
 	}

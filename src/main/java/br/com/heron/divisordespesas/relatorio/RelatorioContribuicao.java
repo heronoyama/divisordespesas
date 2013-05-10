@@ -7,7 +7,7 @@ import br.com.heron.divisordespesas.grupo.Participante;
 
 class RelatorioContribuicao extends RelatorioParticipante {
 
-	public RelatorioContribuicao(Grupo grupo) {
+	RelatorioContribuicao(Grupo grupo) {
 		super(grupo);
 	}
 	

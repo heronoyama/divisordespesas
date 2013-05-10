@@ -11,7 +11,7 @@ class RelatorioFinal extends RelatorioParticipante {
 
 	private String formatoLinha = "%s,R$%.2f,R$%.2f,R$%.2f,R$%.2f";
 
-	public RelatorioFinal(Grupo grupo) {
+	RelatorioFinal(Grupo grupo) {
 		super(grupo);
 	}
 

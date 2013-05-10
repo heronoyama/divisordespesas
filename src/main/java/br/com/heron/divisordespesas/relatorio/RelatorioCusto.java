@@ -1,9 +1,7 @@
 package br.com.heron.divisordespesas.relatorio;
 
 import static java.lang.String.format;
-
-import java.util.Locale;
-
+import static java.util.Locale.ENGLISH;
 import br.com.heron.divisordespesas.grupo.Grupo;
 
 
@@ -12,12 +10,24 @@ public abstract class RelatorioCusto {
 	public static RelatorioCusto getRelatorio(TipoRelatorio tipo, Grupo grupo){
 		if(tipo == TipoRelatorio.CONTRIBUICAO)
 			return new RelatorioContribuicao(grupo);
-		if(tipo == TipoRelatorio.CONSUMO)
-			return new RelatorioConsumoCategoria(grupo);
+		
+		if(tipo == TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA)
+			return new RelatorioDivisaoConsumoCategoria(grupo);
+		
 		if(tipo == TipoRelatorio.DIVIDA)
 			return new RelatorioDivida(grupo);
+		
 		if(tipo == TipoRelatorio.ARECEBER)
 			return new RelatorioAReceber(grupo);
+		
+		if(tipo == TipoRelatorio.GASTO_CATEGORIA)
+			return new RelatorioGastoPorCategoria(grupo);
+		
+		if(tipo == TipoRelatorio.CONSUMO_PARTICIPANTE)
+			return new RelatorioConsumoParticipante(grupo);
+		
+		if(tipo == TipoRelatorio.VALOR_CATEGORIA)
+			return new RelatorioValorCategoria(grupo);
 		
 		return new RelatorioFinal(grupo);
 	}
@@ -31,9 +41,9 @@ public abstract class RelatorioCusto {
 		return formata();
 	}
 
-	private boolean terminou() { return index >= getSize(); }
+	public boolean terminou() { return index >= getSize(); }
 
-	protected String cabecalho(){
+	public String cabecalho(){
 		return adicionaQuebraLinha(getCabecalho());
 	}
 	
@@ -42,7 +52,7 @@ public abstract class RelatorioCusto {
 	protected abstract String formata();
 	
 	protected String formata(Object alvo, double valor){
-		return adicionaQuebraLinha(format(Locale.ENGLISH,custeioSimples, alvo,valor));
+		return adicionaQuebraLinha(format(ENGLISH,custeioSimples, alvo,valor));
 	}
 	
 	protected String adicionaQuebraLinha(String linha){

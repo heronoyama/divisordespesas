@@ -10,7 +10,7 @@ abstract class RelatorioParticipante extends RelatorioCusto {
 	protected Grupo grupo;
 	protected List<Participante> participantes;
 
-	public RelatorioParticipante(Grupo grupo) {
+	RelatorioParticipante(Grupo grupo) {
 		this.grupo = grupo;
 		participantes = grupo.participantes();
 	}
