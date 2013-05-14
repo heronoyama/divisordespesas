@@ -1,6 +1,6 @@
 *.class
-target\*
 *.classpath
 *.project
-\.byke\*
-\settings.*
+target/
+.byke/
+.settings/
