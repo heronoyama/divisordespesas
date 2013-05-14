@@ -3,14 +3,17 @@ package br.com.heron.divisordespesas;
 import java.io.IOException;
 import java.util.Arrays;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
-import br.com.heron.divisordespesas.grupo.Grupo;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.relatorio.FabricaRelatorio;
 import br.com.heron.divisordespesas.relatorio.RelatorioCusto;
 import br.com.heron.divisordespesas.relatorio.TipoRelatorio;
 import br.com.heron.divisordespesas.relatorio.driver.DriverEscrita;
 import br.com.heron.divisordespesas.relatorio.driver.EscritorRelatorioCSV;
 import br.com.heron.divisordespesas.relatorio.driver.FileWraper;
+import br.com.heron.divisordespesas.repositorio.Repositorios;
+import br.com.heron.divisordespesas.repositorio.memoria.RepositorioParticipanteMemoria;
 
 public class Gerador {
 
@@ -43,14 +46,17 @@ public class Gerador {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
+		
+		Repositorios.registre(Participante.class, new RepositorioParticipanteMemoria());
 		participantes();
+		
 		categorias();
 		contribuintes();
 		consumidores();
 		
 		grupo = new Grupo(Arrays.asList(heron,urataki,danilo,pesk,samambaia,paola,ana,joao,kami,louw,cage,patricia,gisele,namoradoDaGisele,slims,menina));
 		
-		RelatorioCusto relatorio = RelatorioCusto.getRelatorio(TipoRelatorio.ARECEBER, grupo);
+		RelatorioCusto relatorio = FabricaRelatorio.getRelatorio(TipoRelatorio.ARECEBER, grupo);
 		DriverEscrita driver = new FileWraper("C:\\test\\relatorioFinal.csv");
 		
 		EscritorRelatorioCSV escritor = new EscritorRelatorioCSV(relatorio, driver);

@@ -4,7 +4,7 @@ import static junit.framework.Assert.assertEquals;
 
 import org.junit.Test;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
 
 public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 	

@@ -2,8 +2,8 @@ package br.com.heron.divisordespesas.relatorio;
 
 import java.util.List;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
-import br.com.heron.divisordespesas.grupo.Grupo;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
 
 class RelatorioDivisaoConsumoCategoria extends RelatorioCusto {
 

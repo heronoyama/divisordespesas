@@ -4,8 +4,8 @@ import static java.lang.String.format;
 import static java.util.Locale.ENGLISH;
 
 
-import br.com.heron.divisordespesas.grupo.Grupo;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 class RelatorioFinal extends RelatorioParticipante {
 

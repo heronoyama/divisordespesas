@@ -1,9 +1,9 @@
 package br.com.heron.divisordespesas.relatorio;
 
 
-import br.com.heron.divisordespesas.contribuicoes.ContribuicaoParticipante;
-import br.com.heron.divisordespesas.grupo.Grupo;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.contribuicoes.ContribuicaoParticipante;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 class RelatorioContribuicao extends RelatorioParticipante {
 

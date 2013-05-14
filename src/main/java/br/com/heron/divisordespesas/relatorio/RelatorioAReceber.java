@@ -1,8 +1,8 @@
 package br.com.heron.divisordespesas.relatorio;
 
 
-import br.com.heron.divisordespesas.grupo.Grupo;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 class RelatorioAReceber extends RelatorioParticipante{
 	

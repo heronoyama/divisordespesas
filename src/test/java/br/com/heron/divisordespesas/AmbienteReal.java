@@ -2,9 +2,9 @@ package br.com.heron.divisordespesas;
 
 import java.util.Arrays;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
-import br.com.heron.divisordespesas.grupo.Grupo;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 public class AmbienteReal {
 	

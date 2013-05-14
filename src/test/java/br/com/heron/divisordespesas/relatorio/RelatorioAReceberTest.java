@@ -5,8 +5,8 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 public class RelatorioAReceberTest extends RelatorioCustoTest{
 

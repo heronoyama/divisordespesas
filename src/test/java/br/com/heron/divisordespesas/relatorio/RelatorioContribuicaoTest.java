@@ -5,8 +5,8 @@ import static junit.framework.Assert.assertEquals;
 
 import org.junit.Test;
 
-import br.com.heron.divisordespesas.configuracao.Categoria;
-import br.com.heron.divisordespesas.grupo.Participante;
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
+import br.com.heron.divisordespesas.model.grupo.Participante;
 
 public class RelatorioContribuicaoTest extends RelatorioCustoTest {
 
