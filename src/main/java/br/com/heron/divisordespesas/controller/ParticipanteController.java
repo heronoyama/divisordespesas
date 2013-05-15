@@ -1,27 +1,48 @@
 package br.com.heron.divisordespesas.controller;
 
-import static br.com.heron.divisordespesas.repositorio.Repositorios.getRepository;
-
 import java.util.List;
 
+import br.com.heron.divisordespesas.model.configuracao.Categoria;
 import br.com.heron.divisordespesas.model.grupo.Participante;
-import br.com.heron.divisordespesas.repositorio.Repository;
+import br.com.heron.divisordespesas.repositorio.ParticipanteRepository;
 
 public class ParticipanteController {
-	
-	public Participante criaParticipante(String nome){
-		
+
+	private ParticipanteRepository repository;
+
+	public ParticipanteController(ParticipanteRepository repository) {
+		this.repository = repository;
+	}
+
+	public Participante cria(String nome) {
+
 		Participante participante = new Participante(nome);
-		repositorio().save(participante);
+		repository.save(participante);
 		return participante;
 	}
 
-	private Repository<Participante> repositorio() {
-		return getRepository(Participante.class);
+	public List<Participante> buscaTodos() {
+		return repository.findAll();
 	}
 
-	public List<Participante> todosParticipantes() {
-		return repositorio().findAll();
+	public Participante busca(String nome) {
+		for (Participante participante : buscaTodos()) {
+			if (participante.getNome().contains(nome))
+				return participante;
+		}
+		return null;
 	}
 
+	public Participante buscaOuCria(String nome) {
+		Participante participante = busca(nome);
+		return participante != null ? participante : cria(nome);
+	}
+
+	public void adicionaContribuicao(String nomeParticipante, Categoria categoria, double valor) {
+		busca(nomeParticipante).contribuiu(categoria, valor);
+	}
+
+	public void adicionaConsumos(String nomeParticipante, Categoria... categorias) {
+		busca(nomeParticipante).consumiu(categorias);
+	}
 }

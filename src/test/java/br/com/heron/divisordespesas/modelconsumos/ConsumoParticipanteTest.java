@@ -50,7 +50,7 @@ public class ConsumoParticipanteTest {
 	public void naoConsomeCategoriaNula(){
 		exception.expect(IllegalArgumentException.class);
 		exception.expectMessage("Consumo Participante deve receber uma Categoria como consumo");
-		criaConsumoParticipante().adiciona(null);
+		criaConsumoParticipante().adiciona((Categoria[])null);
 	}
 	
 	private ConsumoParticipante criaConsumoParticipante() {
