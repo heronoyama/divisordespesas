@@ -7,32 +7,6 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.17</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>1.17</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.17</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
-
-
 		<!-- TESTES -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -40,32 +14,17 @@
 			<version>1.8.4</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<scope>test</scope>		
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-					<url>http://127.0.0.1:8080/manager</url>
-					<server>TomcatServer</server>
-					<path>/divisorDespesas</path>
-					<dependency>
-						<groupId>javax.servlet</groupId>
-						<artifactId>servlet-api</artifactId>
-						<version>2.5</version>
-					</dependency>
-					<dependency>
-						<groupId>jstl</groupId>
-						<artifactId>jstl</artifactId>
-						<version>1.2</version>
-					</dependency>
-				</configuration>
-
-			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -75,5 +34,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<packaging>war</packaging>
 </project>
