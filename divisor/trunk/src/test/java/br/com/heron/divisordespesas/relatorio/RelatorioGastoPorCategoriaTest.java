@@ -21,13 +21,13 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 	@Test
 	public void cabecalho(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
-		assertEquals("Categoria,Valor Consumido"+quebraLinha, relatorio.cabecalho());
+		assertEquals("Categoria;Valor Consumido"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
 	public void umContribuinteEConsumidor(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
-		assertEquals("Carne,R$15.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$15.00"+quebraLinha,relatorio.proximaLinha());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 		kazuhiro.contribuiu(categoriaCarne, 25.0);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
-		assertEquals("Carne,R$40.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$40.00"+quebraLinha,relatorio.proximaLinha());
 	}
 	
 	@Test
@@ -47,8 +47,8 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 		kazuhiro.consumiu(categoriaCarne,categoriaBebida);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
-		assertEquals("Bebida,R$10.00"+quebraLinha,relatorio.proximaLinha());
-		assertEquals("Carne,R$10.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Bebida;R$10.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$10.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 }

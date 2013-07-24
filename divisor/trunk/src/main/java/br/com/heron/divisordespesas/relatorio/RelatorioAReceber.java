@@ -10,7 +10,7 @@ class RelatorioAReceber extends RelatorioParticipante{
 		super(grupo);
 	}
 
-	protected String getCabecalho() { return "Participante,A Receber"; }
+	protected String getCabecalho() { return "Participante;A Receber"; }
 
 
 	protected String formata() {

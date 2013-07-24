@@ -15,6 +15,6 @@ class RelatorioDivida extends RelatorioParticipante {
 		return super.formata(participante, grupo.valorParaPagar(participante));
 	}
 
-	protected String getCabecalho() { return "Participante,Divida"; }
+	protected String getCabecalho() { return "Participante;Divida"; }
 
 }

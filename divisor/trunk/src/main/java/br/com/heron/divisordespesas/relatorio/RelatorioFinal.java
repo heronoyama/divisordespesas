@@ -9,7 +9,7 @@ import br.com.heron.divisordespesas.model.grupo.Participante;
 
 class RelatorioFinal extends RelatorioParticipante {
 
-	private String formatoLinha = "%s,R$%.2f,R$%.2f,R$%.2f,R$%.2f";
+	private String formatoLinha = "%s;R$%.2f;R$%.2f;R$%.2f;R$%.2f";
 
 	RelatorioFinal(Grupo grupo) {
 		super(grupo);
@@ -27,7 +27,7 @@ class RelatorioFinal extends RelatorioParticipante {
 		return adicionaQuebraLinha(linha);
 	}
 
-	protected String getCabecalho() { return "Paritipante,Contribuicao,Divida,Valor Final,Valor Para Receber"; }
+	protected String getCabecalho() { return "Paritipante;Contribuicao;Divida;Valor Final;Valor Para Receber"; }
 	
 
 }

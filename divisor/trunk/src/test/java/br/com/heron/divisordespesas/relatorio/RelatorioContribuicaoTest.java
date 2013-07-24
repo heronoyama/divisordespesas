@@ -17,19 +17,19 @@ public class RelatorioContribuicaoTest extends RelatorioCustoTest {
 	@Test
 	public void imprimeHeader(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(CONTRIBUICAO);
-		assertEquals("Participante,Valor Contribuido"+quebraLinha,relatorio.cabecalho());
+		assertEquals("Participante;Valor Contribuido"+quebraLinha,relatorio.cabecalho());
 	}
 	
 	@Test
 	public void imprimeUmaContribuicao() {
 		RelatorioCusto relatorio = criaGrupoERelatorio(CONTRIBUICAO);
-		assertEquals("Heron,R$81.60"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Heron;R$81.60"+quebraLinha,relatorio.proximaLinha());
 	}
 	
 	@Test
 	public void imprimeTodasContribuicoes() {
 		RelatorioCusto relatorio = criaGrupoERelatorio(CONTRIBUICAO);
-		assertEquals("Heron,R$81.60"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Heron;R$81.60"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 	
@@ -37,7 +37,7 @@ public class RelatorioContribuicaoTest extends RelatorioCustoTest {
 	public void imprimeDuasContribuicoes(){
 		heron.contribuiu(new Categoria("Bebida"), 8.40);
 		RelatorioCusto relatorio = criaGrupoERelatorio(CONTRIBUICAO);
-		assertEquals("Heron,R$90.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Heron;R$90.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 	
@@ -48,8 +48,8 @@ public class RelatorioContribuicaoTest extends RelatorioCustoTest {
 		Participante oyama = new Participante("Oyama");
 		oyama.contribuiu(categoriaCarne,15.0);
 		RelatorioCusto relatorio = criaGrupoERelatorio(CONTRIBUICAO,heron,oyama);
-		assertEquals("Heron,R$90.00"+quebraLinha,relatorio.proximaLinha());
-		assertEquals("Oyama,R$15.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Heron;R$90.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Oyama;R$15.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 

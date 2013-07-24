@@ -7,7 +7,7 @@ import static java.util.Locale.ENGLISH;
 public abstract class RelatorioCusto {
 
 	protected int index = 0;
-	private final String custeioSimples = "%s,R$%.2f";
+	private final String custeioSimples = "%s;R$%.2f";
 
 	public String proximaLinha() {
 		if(terminou())

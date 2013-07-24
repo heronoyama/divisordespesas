@@ -17,6 +17,6 @@ class RelatorioContribuicao extends RelatorioParticipante {
 		return super.formata(participante, contribuicao.valorContribuido());
 	}
 	
-	protected String getCabecalho() { return "Participante,Valor Contribuido"; }
+	protected String getCabecalho() { return "Participante;Valor Contribuido"; }
 
 }

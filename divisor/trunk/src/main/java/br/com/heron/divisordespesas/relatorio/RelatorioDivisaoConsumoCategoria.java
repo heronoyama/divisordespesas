@@ -24,5 +24,5 @@ class RelatorioDivisaoConsumoCategoria extends RelatorioCusto {
 
 	protected int getSize() { return categorias.size(); }
 
-	protected String getCabecalho() { return "Categoria,Valor Consumido"; }
+	protected String getCabecalho() { return "Categoria;Valor Consumido"; }
 }

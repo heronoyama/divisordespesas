@@ -16,7 +16,7 @@ class RelatorioValorCategoria extends RelatorioCusto {
 	}
 
 	protected String getCabecalho() {
-		return "Categoria, Valor Por Participante";
+		return "Categoria; Valor Por Participante";
 	}
 	
 	private Categoria proximaCategoria(){ return categorias.get(index++); }

@@ -10,6 +10,4 @@ public class RepositorioConsumoParticipanteMemoria extends RepositorioMemoria<Co
 		persiste(consumoParticipante);
 	}
 
-	
-
 }

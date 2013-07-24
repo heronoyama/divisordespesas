@@ -19,7 +19,7 @@ class RelatorioGastoPorCategoria extends RelatorioCusto {
 
 	protected int getSize() { return categorias.size(); }
 
-	protected String getCabecalho() { return "Categoria,Valor Consumido"; }
+	protected String getCabecalho() { return "Categoria;Valor Consumido"; }
 
 	protected String formata() {
 		Categoria categoria = proximaCategoria();

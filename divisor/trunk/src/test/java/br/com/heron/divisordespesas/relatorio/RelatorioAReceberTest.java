@@ -15,7 +15,7 @@ public class RelatorioAReceberTest extends RelatorioCustoTest{
 	@Test
 	public void imprimeCabecalho() {
 		RelatorioCusto relatorio = criaGrupoERelatorio(ARECEBER);
-		Assert.assertEquals("Participante,A Receber"+quebraLinha, relatorio.cabecalho());
+		Assert.assertEquals("Participante;A Receber"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
@@ -26,8 +26,8 @@ public class RelatorioAReceberTest extends RelatorioCustoTest{
 		oyama.consumiu(categoriaCarne);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(ARECEBER,heron,oyama);
-		Assert.assertEquals("Heron,R$50.00"+quebraLinha, relatorio.proximaLinha());
-		Assert.assertEquals("Oyama,R$0.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Heron;R$50.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Oyama;R$0.00"+quebraLinha, relatorio.proximaLinha());
 	}
 	
 	@Test
@@ -38,8 +38,8 @@ public class RelatorioAReceberTest extends RelatorioCustoTest{
 		oyama.consumiu(categoriaCarne);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(ARECEBER,heron,oyama);
-		Assert.assertEquals("Heron,R$50.00"+quebraLinha, relatorio.proximaLinha());
-		Assert.assertEquals("Oyama,R$0.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Heron;R$50.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Oyama;R$0.00"+quebraLinha, relatorio.proximaLinha());
 		Assert.assertEquals("", relatorio.proximaLinha());
 	}
 	
@@ -56,9 +56,9 @@ public class RelatorioAReceberTest extends RelatorioCustoTest{
 		kazuhiro.consumiu(categoriaCarne,categoriaBebida);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(ARECEBER,heron,oyama,kazuhiro);
-		Assert.assertEquals("Heron,R$10.00"+quebraLinha, relatorio.proximaLinha());
-		Assert.assertEquals("Kazuhiro,R$0.00"+quebraLinha, relatorio.proximaLinha());
-		Assert.assertEquals("Oyama,R$10.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Heron;R$10.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Kazuhiro;R$0.00"+quebraLinha, relatorio.proximaLinha());
+		Assert.assertEquals("Oyama;R$10.00"+quebraLinha, relatorio.proximaLinha());
 		Assert.assertEquals("", relatorio.proximaLinha());
 		
 	}

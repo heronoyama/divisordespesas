@@ -13,13 +13,13 @@ class RelatorioConsumoParticipante extends RelatorioParticipante {
 
 	@Override
 	protected String getCabecalho() {
-		return "Participante,Consumos";
+		return "Participante;Consumos";
 	}
 
 	@Override
 	protected String formata() {
 		Participante participante = proximoParticipante();
-		return adicionaQuebraLinha(format(ENGLISH, "%s,%s",participante, participante.consumo().categorias()));
+		return adicionaQuebraLinha(format(ENGLISH, "%s;%s",participante, participante.consumo().categorias().toString().replaceAll(",",";")));
 	}
 
 }

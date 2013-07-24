@@ -31,30 +31,30 @@ public class RelatorioDriverCSVTest {
 	@Test
 	public void imprimeCabecalho() throws IOException {
 		escritor.escreveCabecalho();
-		verify(driver).escreve("Paritipante,Contribuicao,Divida,Valor Final,Valor Para Receber"+quebraLinha);
+		verify(driver).escreve("Paritipante;Contribuicao;Divida;Valor Final;Valor Para Receber"+quebraLinha);
 	}
 	
 	@Test
 	public void imprimeUmaLinha() throws IOException {
 		escritor.escreveLinha();
-		verify(driver).escreve("Heron,R$300.00,R$0.00,R$100.00,R$200.00"+quebraLinha);
+		verify(driver).escreve("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha);
 	}
 	
 	@Test
 	public void imprimeAteOFim() throws IOException {
 		escritor.escreveCorpo();
-		verify(driver).escreve("Heron,R$300.00,R$0.00,R$100.00,R$200.00"+quebraLinha);
-		verify(driver).escreve("Kazuhiro,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha);
-		verify(driver).escreve("Oyama,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha);
+		verify(driver).escreve("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha);
+		verify(driver).escreve("Kazuhiro;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha);
+		verify(driver).escreve("Oyama;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha);
 	}
 	
 	@Test
 	public void imprimeRelatorio() throws IOException{
 		escritor.imprimeRelatorio();
-		verify(driver).escreve("Heron,R$300.00,R$0.00,R$100.00,R$200.00"+quebraLinha);
-		verify(driver).escreve("Heron,R$300.00,R$0.00,R$100.00,R$200.00"+quebraLinha);
-		verify(driver).escreve("Kazuhiro,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha);
-		verify(driver).escreve("Oyama,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha);
+		verify(driver).escreve("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha);
+		verify(driver).escreve("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha);
+		verify(driver).escreve("Kazuhiro;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha);
+		verify(driver).escreve("Oyama;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha);
 		verify(driver).close();
 		
 	}

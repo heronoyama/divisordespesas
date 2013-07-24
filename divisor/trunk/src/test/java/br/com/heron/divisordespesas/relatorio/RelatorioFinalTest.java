@@ -16,7 +16,7 @@ public class RelatorioFinalTest extends RelatorioCustoTest{
 	@Test
 	public void imprimeCabecalho(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.FINAL);
-		assertEquals("Paritipante,Contribuicao,Divida,Valor Final,Valor Para Receber"+quebraLinha, relatorio.cabecalho());
+		assertEquals("Paritipante;Contribuicao;Divida;Valor Final;Valor Para Receber"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
@@ -29,9 +29,9 @@ public class RelatorioFinalTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaBebida, 150.00);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.FINAL,heron,oyama,kazuhiro);
-		assertEquals("Heron,R$300.00,R$0.00,R$100.00,R$200.00"+quebraLinha, relatorio.proximaLinha());
-		assertEquals("Kazuhiro,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha, relatorio.proximaLinha());
-		assertEquals("Oyama,R$0.00,R$100.00,R$100.00,R$0.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Kazuhiro;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Oyama;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha, relatorio.proximaLinha());
 		
 	}
 

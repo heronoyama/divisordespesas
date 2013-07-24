@@ -12,7 +12,7 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 	@Test
 	public void imprimeCabecalho(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA);
-		assertEquals("Participante,Divida"+quebraLinha, relatorio.cabecalho());
+		assertEquals("Participante;Divida"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
@@ -20,7 +20,7 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 		heron.consumiu(categoriaCarne);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA);
-		assertEquals("Heron,R$0.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$0.00" + quebraLinha, relatorio.proximaLinha());
 	}
 
 	@Test
@@ -29,7 +29,7 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaCarne, 500.90);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA);
-		assertEquals("Heron,R$0.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$0.00" + quebraLinha, relatorio.proximaLinha());
 	}
 
 	@Test
@@ -40,8 +40,8 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaCarne, 800.00);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA,heron, oyama);
-		assertEquals("Heron,R$0.00" + quebraLinha, relatorio.proximaLinha());
-		assertEquals("Oyama,R$400.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$0.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Oyama;R$400.00" + quebraLinha, relatorio.proximaLinha());
 	}
 
 	@Test
@@ -55,9 +55,9 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaCarne, 100.00);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA,heron, kazuhiro, oyama);
-		assertEquals("Heron,R$0.00" + quebraLinha, relatorio.proximaLinha());
-		assertEquals("Kazuhiro,R$50.00" + quebraLinha, relatorio.proximaLinha());
-		assertEquals("Oyama,R$50.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$0.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Kazuhiro;R$50.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Oyama;R$50.00" + quebraLinha, relatorio.proximaLinha());
 	}
 
 	@Test
@@ -65,7 +65,7 @@ public class RelatorioDividaTest extends RelatorioCustoTest{
 		heron.consumiu(categoriaCarne);
 
 		RelatorioCusto relatorio = criaGrupoERelatorio(DIVIDA);
-		assertEquals("Heron,R$0.00" + quebraLinha, relatorio.proximaLinha());
+		assertEquals("Heron;R$0.00" + quebraLinha, relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 

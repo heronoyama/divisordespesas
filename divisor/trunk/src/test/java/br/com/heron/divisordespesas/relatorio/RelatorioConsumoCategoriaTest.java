@@ -11,7 +11,7 @@ public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 	@Test
 	public void imprimeCabecalho(){
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
-		assertEquals("Categoria,Valor Consumido"+quebraLinha, relatorio.cabecalho());
+		assertEquals("Categoria;Valor Consumido"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
@@ -20,7 +20,7 @@ public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaCarne, 10.0);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
-		assertEquals("Carne,R$10.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Carne;R$10.00"+quebraLinha, relatorio.proximaLinha());
 	}
 	
 	@Test
@@ -28,7 +28,7 @@ public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 		heron.consumiu(categoriaCarne);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
-		assertEquals("Carne,R$0.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Carne;R$0.00"+quebraLinha, relatorio.proximaLinha());
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 		heron.consumiu(categoriaCarne);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
-		assertEquals("Carne,R$0.00"+quebraLinha, relatorio.proximaLinha());
+		assertEquals("Carne;R$0.00"+quebraLinha, relatorio.proximaLinha());
 		assertEquals("", relatorio.proximaLinha());
 		assertEquals("", relatorio.proximaLinha());
 	}
@@ -49,8 +49,8 @@ public class RelatorioConsumoCategoriaTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaBebida, 10.5);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
-		assertEquals("Bebida,R$10.50"+quebraLinha,relatorio.proximaLinha());
-		assertEquals("Carne,R$0.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Bebida;R$10.50"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$0.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 		
 	}

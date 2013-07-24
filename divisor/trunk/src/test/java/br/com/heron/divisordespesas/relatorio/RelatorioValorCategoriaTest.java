@@ -14,7 +14,7 @@ public class RelatorioValorCategoriaTest extends RelatorioCustoTest {
 	@Test
 	public void cabecalho(){
 		RelatorioCusto relatorio = criaGrupoERelatorio();
-		assertEquals("Categoria, Valor Por Participante"+quebraLinha, relatorio.cabecalho());
+		assertEquals("Categoria; Valor Por Participante"+quebraLinha, relatorio.cabecalho());
 	}
 	
 
@@ -25,7 +25,7 @@ public class RelatorioValorCategoriaTest extends RelatorioCustoTest {
 		kazuhiro.consumiu(categoriaCarne);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio();
-		assertEquals("Carne,R$15.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$15.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 	
@@ -38,8 +38,8 @@ public class RelatorioValorCategoriaTest extends RelatorioCustoTest {
 		kazuhiro.consumiu(categoriaCarne,categoriaBebida);
 		
 		RelatorioCusto relatorio = criaGrupoERelatorio();
-		assertEquals("Bebida,R$20.00"+quebraLinha,relatorio.proximaLinha());
-		assertEquals("Carne,R$15.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Bebida;R$20.00"+quebraLinha,relatorio.proximaLinha());
+		assertEquals("Carne;R$15.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());
 	}
 
