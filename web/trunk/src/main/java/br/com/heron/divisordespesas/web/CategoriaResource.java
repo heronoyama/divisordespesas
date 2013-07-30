@@ -40,4 +40,11 @@ public class CategoriaResource {
 		controller.criaCategoria(object.getString("nome"));
 	}
 	
+	@GET
+	@Path("/id/{id}")
+	public Categoria getCategoria(@PathParam("id") int id){
+		controller.
+	}
+	
+	
 }

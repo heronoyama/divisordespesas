@@ -49,4 +49,11 @@ public class CategoriaControllerTest {
 		
 		assertEquals("[Bebida, Carne, Grade]",categoriaController.buscaTodos().toString());
 	}
+	
+	@Test
+	public void buscaPorId(){
+		Categoria categoria = categoriaController.criaCategoria("Carne");
+		Integer id = categoria.getId();
+		assertEquals("Carne", categoriaController.busca(id).getNomeCategoria());
+	}
 }

@@ -1,4 +1,4 @@
-*.classes
+*.class
 *.dmg
 *.gz
 *.iso
@@ -6,4 +6,8 @@
 *.rar
 *.tar
 *.zip
-*/.settings/*
+*.ser
+/*/*/.settings
+/*/*/.classpath
+/*/*/.project
+/*/*/target

@@ -33,5 +33,9 @@ public class CategoriaController {
 		Collections.sort(todos);
 		return todos;
 	}
+	
+	public Categoria busca(int id){
+		return repositorio.find(id);
+	}
 
 }
