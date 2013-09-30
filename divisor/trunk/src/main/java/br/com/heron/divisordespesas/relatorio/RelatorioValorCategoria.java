@@ -3,16 +3,16 @@ package br.com.heron.divisordespesas.relatorio;
 import java.util.List;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.evento.Evento;
 
 class RelatorioValorCategoria extends RelatorioCusto {
 
-	private Grupo grupo;
+	private Evento evento;
 	private List<Categoria> categorias;
 
-	RelatorioValorCategoria(Grupo grupo) {
-		this.grupo = grupo;
-		categorias = grupo.consumos();
+	RelatorioValorCategoria(Evento evento) {
+		this.evento = evento;
+		categorias = evento.consumos();
 	}
 
 	protected String getCabecalho() {
@@ -25,7 +25,7 @@ class RelatorioValorCategoria extends RelatorioCusto {
 
 	protected String formata() {
 		Categoria categoria = proximaCategoria();
-		return super.formata(categoria, grupo.valorFinal(categoria));
+		return super.formata(categoria, evento.valorFinal(categoria));
 	}
 
 }

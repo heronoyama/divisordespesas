@@ -2,13 +2,13 @@ package br.com.heron.divisordespesas.relatorio;
 
 
 import br.com.heron.divisordespesas.model.contribuicoes.ContribuicaoParticipante;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 class RelatorioContribuicao extends RelatorioParticipante {
 
-	RelatorioContribuicao(Grupo grupo) {
-		super(grupo);
+	RelatorioContribuicao(Evento evento) {
+		super(evento);
 	}
 	
 	protected String formata() {

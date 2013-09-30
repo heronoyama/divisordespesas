@@ -1,4 +1,4 @@
-package br.com.heron.divisordespesas.model.grupo.calculadora;
+package br.com.heron.divisordespesas.model.evento.calculadora;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.sort;
@@ -10,7 +10,7 @@ import java.util.Set;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
 import br.com.heron.divisordespesas.model.consumos.ConsumoParticipante;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 class CalculadoraGastos {
 

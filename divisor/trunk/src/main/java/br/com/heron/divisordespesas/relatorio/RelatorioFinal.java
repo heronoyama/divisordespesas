@@ -4,15 +4,15 @@ import static java.lang.String.format;
 import static java.util.Locale.ENGLISH;
 
 
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 class RelatorioFinal extends RelatorioParticipante {
 
 	private String formatoLinha = "%s;R$%.2f;R$%.2f;R$%.2f;R$%.2f";
 
-	RelatorioFinal(Grupo grupo) {
-		super(grupo);
+	RelatorioFinal(Evento evento) {
+		super(evento);
 	}
 
 	@Override
@@ -21,9 +21,9 @@ class RelatorioFinal extends RelatorioParticipante {
 		String linha = format(ENGLISH,formatoLinha, 
 				participante, 
 				participante.valorContribuido(),
-				grupo.valorParaPagar(participante),
-				grupo.valorFinal(participante),
-				grupo.valorParaReceber(participante));
+				evento.valorParaPagar(participante),
+				evento.valorFinal(participante),
+				evento.valorParaReceber(participante));
 		return adicionaQuebraLinha(linha);
 	}
 

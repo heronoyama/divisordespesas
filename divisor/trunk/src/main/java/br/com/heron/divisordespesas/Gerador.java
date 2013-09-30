@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.relatorio.FabricaRelatorio;
 import br.com.heron.divisordespesas.relatorio.RelatorioCusto;
 import br.com.heron.divisordespesas.relatorio.TipoRelatorio;
@@ -39,7 +39,7 @@ public class Gerador {
 	private static Categoria primeiraGrade;
 	private static Categoria segundaGrade;
 	private static Categoria compras;
-	private static Grupo grupo;
+	private static Evento evento;
 
 	/**
 	 * @param args
@@ -54,9 +54,9 @@ public class Gerador {
 		contribuintes();
 		consumidores();
 		
-		grupo = new Grupo(Arrays.asList(heron,urataki,danilo,pesk,samambaia,paola,ana,joao,kami,louw,cage,patricia,gisele,namoradoDaGisele,slims,menina));
+		evento = new Evento(Arrays.asList(heron,urataki,danilo,pesk,samambaia,paola,ana,joao,kami,louw,cage,patricia,gisele,namoradoDaGisele,slims,menina));
 		
-		RelatorioCusto relatorio = FabricaRelatorio.getRelatorio(TipoRelatorio.ARECEBER, grupo);
+		RelatorioCusto relatorio = FabricaRelatorio.getRelatorio(TipoRelatorio.ARECEBER, evento);
 		DriverEscrita driver = new FileWraper("C:\\test\\relatorioFinal.csv");
 		
 		EscritorRelatorioCSV escritor = new EscritorRelatorioCSV(relatorio, driver);

@@ -5,7 +5,7 @@ import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class RelatorioFinalTest extends RelatorioCustoTest{
 	
@@ -15,7 +15,7 @@ public class RelatorioFinalTest extends RelatorioCustoTest{
 	
 	@Test
 	public void imprimeCabecalho(){
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.FINAL);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.FINAL);
 		assertEquals("Paritipante;Contribuicao;Divida;Valor Final;Valor Para Receber"+quebraLinha, relatorio.cabecalho());
 	}
 	
@@ -28,7 +28,7 @@ public class RelatorioFinalTest extends RelatorioCustoTest{
 		heron.contribuiu(categoriaCarne, 150.00);
 		heron.contribuiu(categoriaBebida, 150.00);
 		
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.FINAL,heron,oyama,kazuhiro);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.FINAL,heron,oyama,kazuhiro);
 		assertEquals("Heron;R$300.00;R$0.00;R$100.00;R$200.00"+quebraLinha, relatorio.proximaLinha());
 		assertEquals("Kazuhiro;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha, relatorio.proximaLinha());
 		assertEquals("Oyama;R$0.00;R$100.00;R$100.00;R$0.00"+quebraLinha, relatorio.proximaLinha());

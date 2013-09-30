@@ -7,13 +7,13 @@ import br.com.heron.divisordespesas.model.configuracao.Categoria;
 import br.com.heron.divisordespesas.model.consumos.ConsumoParticipante;
 import br.com.heron.divisordespesas.model.contribuicoes.Contribuicao;
 import br.com.heron.divisordespesas.model.contribuicoes.ContribuicaoParticipante;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioCategoriaMemoria;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioConsumoParticipanteMemoria;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioContribuicaoMemoria;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioContribuicaoParticipanteMemoria;
-import br.com.heron.divisordespesas.repositorio.memoria.RepositorioGrupoMemoria;
+import br.com.heron.divisordespesas.repositorio.memoria.RepositorioEventoMemoria;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioParticipanteMemoria;
 
 public class Repositorios {
@@ -49,7 +49,7 @@ public class Repositorios {
 	private static void registraRepositorios() {
 		registre(Participante.class,new RepositorioParticipanteMemoria());
 		registre(Categoria.class,new RepositorioCategoriaMemoria());
-		registre(Grupo.class,new RepositorioGrupoMemoria());
+		registre(Evento.class,new RepositorioEventoMemoria());
 		registre(Contribuicao.class, new RepositorioContribuicaoMemoria());
 		registre(ConsumoParticipante.class, new RepositorioConsumoParticipanteMemoria());
 		registre(ContribuicaoParticipante.class, new RepositorioContribuicaoParticipanteMemoria());

@@ -1,9 +1,9 @@
-package br.com.heron.divisordespesas.model.grupo.calculadora;
+package br.com.heron.divisordespesas.model.evento.calculadora;
 
 import java.util.List;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class Calculadora {
 	

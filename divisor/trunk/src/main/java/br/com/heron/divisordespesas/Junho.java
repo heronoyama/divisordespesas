@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.relatorio.FabricaRelatorio;
 import br.com.heron.divisordespesas.relatorio.RelatorioCusto;
 import br.com.heron.divisordespesas.relatorio.TipoRelatorio;
@@ -29,7 +29,7 @@ public class Junho {
 	private static Categoria primeiraGrade;
 	private static Categoria segundaGrade;
 	private static Categoria compras;
-	private static Grupo grupo;
+	private static Evento evento;
 	
 	public static void main(String[] args) throws IOException {
 
@@ -40,7 +40,7 @@ public class Junho {
 		contribuintes();
 		consumidores();
 
-		grupo = new Grupo(Arrays.asList(heron, danilo,pesk,samambaia,paola,kami));
+		evento = new Evento(Arrays.asList(heron, danilo,pesk,samambaia,paola,kami));
 
 		geraRelatorio("consumoParticipante.csv",TipoRelatorio.CONSUMO_PARTICIPANTE);
 		geraRelatorio("divisaoConsumoCategoria.csv",TipoRelatorio.DIVISAO_CONSUMO_CATEGORIA);
@@ -53,7 +53,7 @@ public class Junho {
 	}
 	
 	private static void geraRelatorio(String titulo, TipoRelatorio tipo) throws IOException{
-		RelatorioCusto relatorio = FabricaRelatorio.getRelatorio(tipo, grupo);
+		RelatorioCusto relatorio = FabricaRelatorio.getRelatorio(tipo, evento);
 		DriverEscrita driver = new FileWraper("C:\\test\\Junho\\"+titulo);
 		EscritorRelatorioCSV escritor = new EscritorRelatorioCSV(relatorio, driver);
 		escritor.imprimeRelatorio();

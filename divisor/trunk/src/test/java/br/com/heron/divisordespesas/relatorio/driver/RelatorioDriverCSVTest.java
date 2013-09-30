@@ -10,8 +10,8 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.relatorio.FabricaRelatorio;
 import br.com.heron.divisordespesas.relatorio.RelatorioCusto;
 import br.com.heron.divisordespesas.relatorio.TipoRelatorio;
@@ -76,8 +76,8 @@ public class RelatorioDriverCSVTest {
 		
 		heron.contribuiu(categoriaCarne, 150.00);
 		heron.contribuiu(categoriaBebida, 150.00);
-		Grupo grupo = new Grupo(asList(heron, kazuhiro, oyama));
-		return FabricaRelatorio.getRelatorio(TipoRelatorio.FINAL, grupo);
+		Evento evento = new Evento(asList(heron, kazuhiro, oyama));
+		return FabricaRelatorio.getRelatorio(TipoRelatorio.FINAL, evento);
 	}
 	
 }

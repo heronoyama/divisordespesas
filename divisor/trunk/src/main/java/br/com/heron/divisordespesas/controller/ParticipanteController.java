@@ -3,7 +3,7 @@ package br.com.heron.divisordespesas.controller;
 import java.util.List;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.repositorio.ParticipanteRepository;
 
 public class ParticipanteController {

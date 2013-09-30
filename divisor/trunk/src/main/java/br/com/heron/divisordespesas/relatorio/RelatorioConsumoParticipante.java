@@ -2,13 +2,13 @@ package br.com.heron.divisordespesas.relatorio;
 
 import static java.lang.String.format;
 import static java.util.Locale.ENGLISH;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 class RelatorioConsumoParticipante extends RelatorioParticipante {
 
-	RelatorioConsumoParticipante(Grupo grupo) {
-		super(grupo);
+	RelatorioConsumoParticipante(Evento evento) {
+		super(evento);
 	}
 
 	@Override

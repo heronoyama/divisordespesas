@@ -10,8 +10,8 @@ public class RepositorioMemoria<T> {
 	protected Integer id = 1;
 	protected Map<Integer,T> valores = new HashMap<Integer,T>();
 	
-	protected void persiste(T grupo) {
-		valores.put(id, grupo);
+	protected void persiste(T objeto) {
+		valores.put(id, objeto);
 		id++;
 	}
 	

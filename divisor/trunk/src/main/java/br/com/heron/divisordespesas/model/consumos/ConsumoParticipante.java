@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class ConsumoParticipante {
 

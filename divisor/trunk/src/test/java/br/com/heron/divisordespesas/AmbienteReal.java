@@ -3,8 +3,8 @@ package br.com.heron.divisordespesas;
 import java.util.Arrays;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class AmbienteReal {
 	
@@ -13,7 +13,7 @@ public class AmbienteReal {
 	public Participante danilo;
 	public Participante rafael;
 	public Participante paola;
-	public Grupo grupo;
+	public Evento evento;
 	public Categoria carne;
 	public Categoria cerveja;
 	public Categoria aluguel;
@@ -26,7 +26,7 @@ public class AmbienteReal {
 		rafael = new Participante("Rafael");
 		paola = new Participante("Paola");
 		
-		grupo = new Grupo(Arrays.asList(heron,joao,danilo,rafael,paola));
+		evento = new Evento(Arrays.asList(heron,joao,danilo,rafael,paola));
 		
 		contribuintesDeCarne();
 		contribuintesDeCerveja();

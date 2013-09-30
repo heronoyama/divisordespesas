@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import br.com.heron.divisordespesas.model.grupo.Grupo;
+import br.com.heron.divisordespesas.model.evento.Evento;
 
 public class RelatorioTest extends RelatorioCustoTest{
 	
@@ -17,13 +17,13 @@ public class RelatorioTest extends RelatorioCustoTest{
 	public void naoCriaRelatorioSemTipo(){
 		exception.expect(IllegalArgumentException.class);
 		exception.expectMessage("Especifique um tipo de relatório.");
-		FabricaRelatorio.getRelatorio(null, new Grupo(asList(heron)));
+		FabricaRelatorio.getRelatorio(null, new Evento(asList(heron)));
 	}
 	
 	@Test
-	public void naoCriaRelatorioSemGrupo(){
+	public void naoCriaRelatorioSemEvento(){
 		exception.expect(IllegalArgumentException.class);
-		exception.expectMessage("Especifique um grupo.");
+		exception.expectMessage("Especifique um evento.");
 		FabricaRelatorio.getRelatorio(TipoRelatorio.FINAL,null);
 	}
 

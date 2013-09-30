@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioCategoriaMemoria;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioParticipanteMemoria;
 

@@ -1,4 +1,4 @@
-package br.com.heron.divisordespesas.model.grupo;
+package br.com.heron.divisordespesas.model.evento;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
 import br.com.heron.divisordespesas.model.consumos.ConsumoParticipante;

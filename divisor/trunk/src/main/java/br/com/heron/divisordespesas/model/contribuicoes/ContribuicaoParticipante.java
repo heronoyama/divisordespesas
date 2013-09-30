@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class ContribuicaoParticipante {
 	

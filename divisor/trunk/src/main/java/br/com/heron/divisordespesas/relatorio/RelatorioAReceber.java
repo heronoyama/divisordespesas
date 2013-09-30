@@ -1,13 +1,13 @@
 package br.com.heron.divisordespesas.relatorio;
 
 
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 class RelatorioAReceber extends RelatorioParticipante{
 	
-	public RelatorioAReceber(Grupo grupo){
-		super(grupo);
+	public RelatorioAReceber(Evento evento){
+		super(evento);
 	}
 
 	protected String getCabecalho() { return "Participante;A Receber"; }
@@ -15,7 +15,7 @@ class RelatorioAReceber extends RelatorioParticipante{
 
 	protected String formata() {
 		Participante participante = proximoParticipante();
-		return super.formata(participante, grupo.valorParaReceber(participante));
+		return super.formata(participante, evento.valorParaReceber(participante));
 	}
 
 }

@@ -1,26 +1,26 @@
-package br.com.heron.divisordespesas.model.grupo;
+package br.com.heron.divisordespesas.model.evento;
 
 import static java.util.Collections.sort;
 
 import java.util.List;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.calculadora.Calculadora;
+import br.com.heron.divisordespesas.model.evento.calculadora.Calculadora;
 
-public class Grupo {
+public class Evento {
 
 	private Integer id;
 	private List<Participante> participantes;
 	private Calculadora calculadora;
 
-	public Grupo(List<Participante> participantes) {
+	public Evento(List<Participante> participantes) {
 		setParticipantes(participantes);
 		calculadora = new Calculadora(participantes);
 	}
 
 	private void setParticipantes(List<Participante> participantes) {
 		if(participantes == null || participantes.isEmpty())
-			throw new IllegalArgumentException("Para criar-se um grupo é necessário de participantes.");
+			throw new IllegalArgumentException("Para criar-se um evento é necessário de participantes.");
 		this.participantes = participantes;
 	}
 

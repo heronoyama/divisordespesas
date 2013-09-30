@@ -8,7 +8,7 @@ import org.junit.rules.ExpectedException;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
 import br.com.heron.divisordespesas.model.contribuicoes.Contribuicao;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class ContribuicaoTest {
 	

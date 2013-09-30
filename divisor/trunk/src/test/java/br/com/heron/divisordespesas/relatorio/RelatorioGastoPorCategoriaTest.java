@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
 public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 
@@ -20,13 +20,13 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 	
 	@Test
 	public void cabecalho(){
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
 		assertEquals("Categoria;Valor Consumido"+quebraLinha, relatorio.cabecalho());
 	}
 	
 	@Test
 	public void umContribuinteEConsumidor(){
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.GASTO_CATEGORIA);
 		assertEquals("Carne;R$15.00"+quebraLinha,relatorio.proximaLinha());
 	}
 	
@@ -34,7 +34,7 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 	public void duasContribuicoes(){
 		kazuhiro.contribuiu(categoriaCarne, 25.0);
 
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
 		assertEquals("Carne;R$40.00"+quebraLinha,relatorio.proximaLinha());
 	}
 	
@@ -46,7 +46,7 @@ public class RelatorioGastoPorCategoriaTest extends RelatorioCustoTest {
 		heron.consumiu(categoriaBebida);
 		kazuhiro.consumiu(categoriaCarne,categoriaBebida);
 		
-		RelatorioCusto relatorio = criaGrupoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
+		RelatorioCusto relatorio = criaEventoERelatorio(TipoRelatorio.GASTO_CATEGORIA,heron,kazuhiro);
 		assertEquals("Bebida;R$10.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("Carne;R$10.00"+quebraLinha,relatorio.proximaLinha());
 		assertEquals("",relatorio.proximaLinha());

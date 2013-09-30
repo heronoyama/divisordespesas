@@ -1,4 +1,4 @@
-package br.com.heron.divisordespesas.model.grupo;
+package br.com.heron.divisordespesas.model.evento;
 
 import static java.util.Arrays.asList;
 import static junit.framework.Assert.assertEquals;
@@ -11,10 +11,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import br.com.heron.divisordespesas.model.configuracao.Categoria;
-import br.com.heron.divisordespesas.model.grupo.Grupo;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Evento;
+import br.com.heron.divisordespesas.model.evento.Participante;
 
-public class GrupoTest {
+public class EventoTest {
 
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
@@ -22,13 +22,13 @@ public class GrupoTest {
 	private Participante participante = new Participante("Heron");
 
 	@Test
-	public void criaParticipanteEGrupo() {
+	public void criaParticipanteEEvento() {
 		Participante participante2 = criaSegundoParticipante();
 
-		Grupo grupo = criaGrupo(asList(participante, participante2));
+		Evento evento = criaEvento(asList(participante, participante2));
 
-		assertEquals("[Heron, Oyama]", grupo.participantes().toString());
-		assertEquals(2, grupo.quantidadeParticipantes());
+		assertEquals("[Heron, Oyama]", evento.participantes().toString());
+		assertEquals(2, evento.quantidadeParticipantes());
 	}
 
 	@Test
@@ -44,31 +44,31 @@ public class GrupoTest {
 	}
 
 	@Test
-	public void consumosDoGrupo() {
+	public void consumosDoEvento() {
 		participante.consumiu(criaCategoria("Carne"));
 		participante.consumiu(criaCategoria("Bebida"));
 
-		Grupo grupo = criaGrupo(asList(participante));
-		assertEquals("[Bebida, Carne]", grupo.consumos().toString());
+		Evento evento = criaEvento(asList(participante));
+		assertEquals("[Bebida, Carne]", evento.consumos().toString());
 	}
 	
 	@Test
-	public void naoCriaGrupoComParticipantesNulo(){
+	public void naoCriaEventoComParticipantesNulo(){
 		exception.expect(IllegalArgumentException.class);
-		exception.expectMessage("Para criar-se um grupo é necessário de participantes.");
-		new Grupo(null);
+		exception.expectMessage("Para criar-se um evento é necessário de participantes.");
+		new Evento(null);
 	}
 	
 	@Test
-	public void naoCriaGrupoComParticipantesVazios(){
+	public void naoCriaEventoComParticipantesVazios(){
 		exception.expect(IllegalArgumentException.class);
-		exception.expectMessage("Para criar-se um grupo é necessário de participantes.");
-		new Grupo(new ArrayList<Participante>());
+		exception.expectMessage("Para criar-se um evento é necessário de participantes.");
+		new Evento(new ArrayList<Participante>());
 	}
 	
 
-	private Grupo criaGrupo(List<Participante> participantes) {
-		return new Grupo(participantes);
+	private Evento criaEvento(List<Participante> participantes) {
+		return new Evento(participantes);
 	}
 
 	private Participante criaSegundoParticipante() {
