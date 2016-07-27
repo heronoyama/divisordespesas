@@ -23,5 +23,7 @@ public class Categoria implements Comparable<Categoria>{
 	public void setId(Integer id) { this.id = id; }
 
 	public String getNomeCategoria() {return nomeCategoria;}
+	
+	
 
 }
