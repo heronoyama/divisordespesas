@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import org.codehaus.jettison.json.JSONException;
@@ -43,7 +44,8 @@ public class CategoriaResource {
 	@GET
 	@Path("/id/{id}")
 	public Categoria getCategoria(@PathParam("id") int id){
-		controller.
+//		controller.
+		return null;
 	}
 	
 	

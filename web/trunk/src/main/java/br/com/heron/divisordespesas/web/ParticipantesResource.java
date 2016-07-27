@@ -10,7 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import br.com.heron.divisordespesas.controller.ParticipanteController;
-import br.com.heron.divisordespesas.model.grupo.Participante;
+import br.com.heron.divisordespesas.model.evento.Participante;
 import br.com.heron.divisordespesas.repositorio.ParticipanteRepository;
 import br.com.heron.divisordespesas.repositorio.memoria.RepositorioParticipanteMemoria;
 
