@@ -38,4 +38,4 @@ function EventosModel(){
 
 }
 
-//ko.applyBindings(new EventosControllerModel() ,$('#EventoList')[0]);
+ko.applyBindings(new EventosModel() ,$('#EventoList')[0]);

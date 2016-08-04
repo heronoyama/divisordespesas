@@ -1,29 +1,42 @@
-function AppModel(){
-
+function Page(data){
 	var self = this;
-	self.currentModel = ko.observable();
-    self.currentView = ko.observable();
-    self.views = ko.observableArray([
-        {name:'Eventos', model : new EventosModel()},
-        {name: 'Participantes', model : new ParticipantesModel()}
-        ]);
+	self.page = data.page;
+	self.view = data.view;
+	
+	self.getUrl = function(){ return '#'+ self.page+'/'+self.view; };
+	self.getTemplateLocation = function(){ return 'templates/'+self.view + '.html'};
+};
 
-    self.setCurrentModel = function(view){
-        var objectToLoad = $.grep(self.views(), function(element){
-        	return element.name == view;
-        })[0]; //TODO is fucking ugly
-        
-        self.currentModel(objectToLoad.model);
-        self.currentView(view);
-    };
-    
-}
+var defaultPage = new Page({page: 'Eventos', view:'eventosView'});
 
-var appModel = new AppModel();
-ko.applyBindings(appModel);
+function HeaderViewModel(){
+	var self = this;
+	self.pages = ko.observableArray(
+			[ defaultPage,
+			  new Page({page: 'Participantes', view:'participantesView'})
+			]);
+	self.currentPage = ko.observable();
+	
+	self.setPage = function(page,view){
+		 var pageToLoad  = $.grep(self.pages(), function(element){
+	        	return element.page == page && element.view == view;
+	        })[0]; //TODO is fucking ugly
+		 if(!pageToLoad) //TODO
+			 console.log('TODO: Tratamento 404');
+		 self.currentPage(pageToLoad);
+		 $('#content').load(pageToLoad.getTemplateLocation());
+	};
+	
+};
+
+var headerModel  = new HeaderViewModel();
+ko.applyBindings(headerModel,$('#headerController')[0]);
 
 Sammy(function (){
-	this.get('/#:view',function(){
-        appModel.setCurrentModel(this.params.view);
+	this.get('#:page/:view',function(){
+		headerModel.setPage(this.params['page'],this.params['view']);
 	});   
-}).run('#Eventos');
+}).run(defaultPage.getUrl());
+
+
+

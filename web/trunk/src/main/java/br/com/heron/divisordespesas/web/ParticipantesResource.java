@@ -26,7 +26,7 @@ public class ParticipantesResource {
 	private ParticipanteController controller = new ParticipanteController(repositorio);
 	
 	@GET
-	public List<Participante> todas(){
+	public List<Participante> todos(){
 		return controller.buscaTodos();
 	}
 
