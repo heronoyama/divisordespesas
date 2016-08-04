@@ -16,6 +16,12 @@ public class EventoController {
 	public EventoController(EventoRepository repositorio) {
 		this.repositorio = repositorio;
 	}
+	
+	public Evento criaEvento(String nome){
+		Evento evento = new Evento(nome);
+		repositorio.save(evento);
+		return evento;
+	}
 
 	public Evento criaEvento(List<Participante> todosParticipantes) {
 		Evento evento = new Evento(todosParticipantes);
@@ -24,6 +30,10 @@ public class EventoController {
 	}
 	public Evento criaEvento(Participante... participantes) {
 		return criaEvento(asList(participantes));
+	}
+	
+	public List<Evento> todos(){
+		return repositorio.findAll();
 	}
 
 	public List<Evento> eventos(Participante participante) {

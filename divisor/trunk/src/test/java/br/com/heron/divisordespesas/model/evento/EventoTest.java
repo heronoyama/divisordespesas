@@ -56,7 +56,7 @@ public class EventoTest {
 	public void naoCriaEventoComParticipantesNulo(){
 		exception.expect(IllegalArgumentException.class);
 		exception.expectMessage("Para criar-se um evento é necessário de participantes.");
-		new Evento(null);
+//		new Evento(null);
 	}
 	
 	@Test

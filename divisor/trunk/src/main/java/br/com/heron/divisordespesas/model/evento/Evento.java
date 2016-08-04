@@ -9,16 +9,24 @@ import br.com.heron.divisordespesas.model.evento.calculadora.Calculadora;
 
 public class Evento {
 
+	private String nome;
 	private Integer id;
 	private List<Participante> participantes;
 	private Calculadora calculadora;
 
+	public Evento(String nome){
+		this.nome = nome;
+	}
+	
 	public Evento(List<Participante> participantes) {
 		setParticipantes(participantes);
 		calculadora = new Calculadora(participantes);
 	}
 
 	private void setParticipantes(List<Participante> participantes) {
+		if(calculadora == null)
+			calculadora = new Calculadora(participantes);
+		
 		if(participantes == null || participantes.isEmpty())
 			throw new IllegalArgumentException("Para criar-se um evento é necessário de participantes.");
 		this.participantes = participantes;
@@ -68,5 +76,7 @@ public class Evento {
 	public Integer getId() { return id; }
 
 	public void setId(Integer id) { this.id = id; }
+	
+	public String getNome() { return nome;}
 
 }
